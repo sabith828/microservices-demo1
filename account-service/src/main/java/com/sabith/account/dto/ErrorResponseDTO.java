@@ -1,4 +1,4 @@
-package com.sabith.accountservice.dto;
+package com.sabith.account.dto;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +13,7 @@ import lombok.Data;
 @Schema(name = "ErrorResponse", description = "Schema to hold Error Response information")
 public class ErrorResponseDTO {
 
-	@Schema(description = "API path invoked by client")
+	@Schema(description = "API Path invoked by client")
 	private String apiPath;
 
 	@Schema(description = "Error Code representing the error happened")

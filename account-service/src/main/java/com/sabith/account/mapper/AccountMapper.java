@@ -1,7 +1,7 @@
-package com.sabith.accountservice.mapper;
+package com.sabith.account.mapper;
 
-import com.sabith.accountservice.dto.AccountDTO;
-import com.sabith.accountservice.entity.Account;
+import com.sabith.account.dto.AccountDTO;
+import com.sabith.account.entity.Account;
 
 public class AccountMapper {
 
@@ -12,7 +12,7 @@ public class AccountMapper {
 		return accountDTO;
 	}
 
-	public static Account mapToAccounts(AccountDTO accountDTO, Account account) {
+	public static Account mapToAccount(AccountDTO accountDTO, Account account) {
 		account.setAccountNumber(accountDTO.getAccountNumber());
 		account.setAccountType(accountDTO.getAccountType());
 		account.setBranchAddress(accountDTO.getBranchAddress());

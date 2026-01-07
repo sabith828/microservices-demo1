@@ -1,4 +1,4 @@
-package com.sabith.accountservice.dto;
+package com.sabith.account.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

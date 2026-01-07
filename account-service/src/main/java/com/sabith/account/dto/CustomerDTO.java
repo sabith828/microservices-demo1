@@ -1,4 +1,4 @@
-package com.sabith.accountservice.dto;
+package com.sabith.account.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
@@ -21,7 +21,7 @@ public class CustomerDTO {
 	@Email(message = "Email Address should be a valid value")
 	private String email;
 
-	@Schema(description = "Mobile Number of the Customer", example = "9345432123")
+	@Schema(description = "Mobile Number of the Customer", example = "1845432123")
 	@Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile Number must be 10 digits")
 	private String mobileNumber;
 

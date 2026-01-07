@@ -1,4 +1,4 @@
-package com.sabith.accountservice;
+package com.sabith.account;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

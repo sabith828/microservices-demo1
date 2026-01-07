@@ -1,11 +1,11 @@
-package com.sabith.accountservice.mapper;
+package com.sabith.account.mapper;
 
-import com.sabith.accountservice.dto.CustomerDTO;
-import com.sabith.accountservice.entity.Customer;
+import com.sabith.account.dto.CustomerDTO;
+import com.sabith.account.entity.Customer;
 
 public class CustomerMapper {
 
-	public static CustomerDTO mapToCustomerDto(Customer customer, CustomerDTO customerDTO) {
+	public static CustomerDTO mapToCustomerDTO(Customer customer, CustomerDTO customerDTO) {
 		customerDTO.setName(customer.getName());
 		customerDTO.setEmail(customer.getEmail());
 		customerDTO.setMobileNumber(customer.getMobileNumber());

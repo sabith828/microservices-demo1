@@ -1,4 +1,4 @@
-package com.sabith.accountservice.dto;
+package com.sabith.account.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
@@ -11,7 +11,7 @@ public class AccountDTO {
 
 	@NotEmpty(message = "AccountNumber can not be a null or empty")
 	@Pattern(regexp = "(^$|[0-9]{10})", message = "AccountNumber must be 10 digits")
-	@Schema(description = "Account Number of Bank Account", example = "3454433243")
+	@Schema(description = "Account Number of Bank Account", example = "2154433243")
 	private Long accountNumber;
 
 	@NotEmpty(message = "AccountType can not be a null or empty")
@@ -19,6 +19,6 @@ public class AccountDTO {
 	private String accountType;
 
 	@NotEmpty(message = "BranchAddress can not be a null or empty")
-	@Schema(description = "Bank Branch Address", example = "123 NewYork")
+	@Schema(description = "Bank Branch Address", example = "123 Colombo")
 	private String branchAddress;
 }
