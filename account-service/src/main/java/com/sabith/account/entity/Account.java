@@ -1,4 +1,4 @@
-package com.sabith.accountservice.entity;
+package com.sabith.account.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
