@@ -13,15 +13,15 @@ import lombok.Data;
 @Schema(name = "ErrorResponse", description = "Schema to hold Error Response information")
 public class ErrorResponseDTO {
 
-	@Schema(description = "API Path invoked by client")
+	@Schema(description = "API Path invoked by Client")
 	private String apiPath;
 
-	@Schema(description = "Error Code representing the error happened")
+	@Schema(description = "Error Code representing the Error happened")
 	private HttpStatus errorCode;
 
-	@Schema(description = "Error Message representing the error happened")
+	@Schema(description = "Error Message representing the Error happened")
 	private String errorMessage;
 
-	@Schema(description = "Time representing when the error happened")
+	@Schema(description = "Time representing when the Error happened")
 	private LocalDateTime errorTime;
 }
