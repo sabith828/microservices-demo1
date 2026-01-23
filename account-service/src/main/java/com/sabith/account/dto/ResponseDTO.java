@@ -9,9 +9,9 @@ import lombok.Data;
 @AllArgsConstructor
 public class ResponseDTO {
 
-	@Schema(description = "Status Code in the response")
+	@Schema(description = "Status Code in the Response")
 	private String statusCode;
 
-	@Schema(description = "Status Message in the response")
+	@Schema(description = "Status Message in the Response")
 	private String statusMessage;
 }
