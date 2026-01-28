@@ -34,7 +34,7 @@ import lombok.AllArgsConstructor;
         description = "CRUD REST APIs for Card Microservice to CREATE, UPDATE, FETCH AND DELETE Card details"
 )
 @RestController
-@RequestMapping(path = "/api/cards", produces = { MediaType.APPLICATION_JSON_VALUE })
+@RequestMapping(path = "/api/card-service/cards", produces = { MediaType.APPLICATION_JSON_VALUE })
 @AllArgsConstructor
 @Validated
 public class CardController {
