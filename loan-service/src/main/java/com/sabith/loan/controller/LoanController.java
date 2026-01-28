@@ -34,7 +34,7 @@ import lombok.AllArgsConstructor;
         description = "CRUD REST APIs for Loan Microservice to CREATE, UPDATE, FETCH AND DELETE Loan details"
 )
 @RestController
-@RequestMapping(path = "/api/loans", produces = { MediaType.APPLICATION_JSON_VALUE })
+@RequestMapping(path = "/api/loan-service/loans", produces = { MediaType.APPLICATION_JSON_VALUE })
 @AllArgsConstructor
 @Validated
 public class LoanController {
