@@ -13,7 +13,7 @@ import lombok.Data;
 @Schema(name = "ErrorResponse", description = "Schema to hold Error Response information")
 public class ErrorResponseDTO {
 
-	@Schema(description = "API Path invoked by Client")
+	@Schema(description = "API Path invoked by the Client")
 	private String apiPath;
 
 	@Schema(description = "Error Code representing the Error happened")
