@@ -9,16 +9,16 @@ import lombok.Data;
 @Schema(name = "Account", description = "Schema to hold Account information")
 public class AccountDTO {
 
-	@NotEmpty(message = "AccountNumber can not be a null or empty")
-	@Pattern(regexp = "(^$|[0-9]{10})", message = "AccountNumber must be 10 digits")
-	@Schema(description = "Account Number of Bank Account", example = "2154433243")
+	@NotEmpty(message = "Account Number can not be a null or empty")
+	@Pattern(regexp = "(^$|[0-9]{10})", message = "Account Number must be 10 digits")
+	@Schema(description = "Account Number of the Bank Account", example = "2154433243")
 	private Long accountNumber;
 
-	@NotEmpty(message = "AccountType can not be a null or empty")
-	@Schema(description = "Account Type of Bank Account", example = "Savings")
+	@NotEmpty(message = "Account Type can not be a null or empty")
+	@Schema(description = "Account Type of the Bank Account", example = "Savings")
 	private String accountType;
 
-	@NotEmpty(message = "BranchAddress can not be a null or empty")
+	@NotEmpty(message = "Branch Address can not be a null or empty")
 	@Schema(description = "Bank Branch Address", example = "123 Colombo")
 	private String branchAddress;
 }

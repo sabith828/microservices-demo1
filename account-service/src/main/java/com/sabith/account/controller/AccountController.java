@@ -34,7 +34,7 @@ import lombok.AllArgsConstructor;
         description = "CRUD REST APIs for Account Microservice to CREATE, UPDATE, FETCH AND DELETE Account details"
 )
 @RestController
-@RequestMapping(path = "/api/accounts", produces = { MediaType.APPLICATION_JSON_VALUE })
+@RequestMapping(path = "/api/account-service/accounts", produces = { MediaType.APPLICATION_JSON_VALUE })
 @AllArgsConstructor
 @Validated
 public class AccountController {
