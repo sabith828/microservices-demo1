@@ -12,6 +12,7 @@
 	<groupId>com.sabith</groupId>
 	<artifactId>card-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>card-service</name>
 	<description>card-service</description>
 	<url />
@@ -122,6 +123,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <to>
+                        <image>sabith828/${project.artifactId}:v1</image>
+                    </to>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
