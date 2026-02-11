@@ -1,5 +1,6 @@
 package com.sabith.account.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sabith.account.constants.AccountConstants;
+import com.sabith.account.dto.AccountContactInfoDTO;
 import com.sabith.account.dto.CustomerDTO;
 import com.sabith.account.dto.ErrorResponseDTO;
 import com.sabith.account.dto.ResponseDTO;
@@ -27,7 +29,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
 
 @Tag(
         name = "CRUD REST APIs for Account Microservice",
@@ -35,12 +36,22 @@ import lombok.AllArgsConstructor;
 )
 @RestController
 @RequestMapping(path = "/api/account-service/accounts", produces = { MediaType.APPLICATION_JSON_VALUE })
-@AllArgsConstructor
 @Validated
 public class AccountController {
+	
+	@Value("${build.version}")
+    private String buildVersion;
+	
+	private AccountContactInfoDTO accountContactInfoDTO;
 
 	private AccountService accountService;
 	
+	
+	public AccountController(AccountService accountService, AccountContactInfoDTO accountContactInfoDTO) {
+		this.accountService = accountService;
+		this.accountContactInfoDTO = accountContactInfoDTO;
+	}
+
 	@Operation(
             summary = "Create Account REST API",
             description = "REST API to create new Customer and Account"
@@ -141,4 +152,54 @@ public class AccountController {
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(new ResponseDTO(AccountConstants.STATUS_200, AccountConstants.MESSAGE_200));
 	}
+	
+	@Operation(
+            summary = "Get Build information",
+            description = "Get Build information that is deployed into Account Microservice"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/build-info")
+    public ResponseEntity<String> getBuildInfo() {
+        return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(buildVersion);
+    }
+	
+	@Operation(
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountContactInfoDTO> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountContactInfoDTO);
+    }
 }
