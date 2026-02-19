@@ -2,7 +2,10 @@ package com.sabith.card;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+import com.sabith.card.dto.CardContactInfoDTO;
 
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -12,6 +15,7 @@ import io.swagger.v3.oas.annotations.info.License;
 
 @SpringBootApplication
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
+@EnableConfigurationProperties(value = {CardContactInfoDTO.class})
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Card Microservice REST API Documentation",
